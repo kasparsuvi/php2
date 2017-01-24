@@ -49,7 +49,15 @@ class template{
             exit;
         }
     }// loadFile
+
     function readFile($f){
         $this->content = file_get_contents($f);
     }// readFile
+
+	// set up html template elements and their real values
+	// $name - template element name
+	// $val - real value for template element
+	function set($name, $val){
+    		$this->vars[$name] = $val;
+    }// set
 }// class end
