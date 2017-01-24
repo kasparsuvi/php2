@@ -31,4 +31,12 @@ echo '</pre>';
 */
 echo $tmpl->parse();
 
+// import http class
+require_once CLASSES_DIR.'http.php';
+// create and output http object
+$http = new http();
+// control http object output
+echo '<pre>';
+print_r($http);
+echo '</pre>';
 ?>
