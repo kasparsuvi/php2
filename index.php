@@ -77,5 +77,7 @@ echo $link.'<br />';
 echo '<pre>';
 print_r($http);
 echo '</pre>';
+echo '<hr />';
+echo $http->get('act');
 
 ?>
