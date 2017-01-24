@@ -37,4 +37,18 @@ class linkobject extends http{// class begin
         // create pair: element_name=element_value
         $link = $link.fixUrl($name).$this->eq.fixUrl($val);
  	}// addTo Link
+    // merge baseUrl and link with data pairs
+	function getLink($add = array()){
+    		$link = '';
+    		foreach ($add as $name => $val){
+        			$this->addToLink($link, $name, $val);
+        		}
+ 		// control, is link not empty - pairs is created
+ 		if($link != ''){
+        			$link = $this->baseUrl.'?'.$link; // http://IP/path_to_script.php?name=value
+        		} else {
+        			$link = $this->baseUrl;
+        		}
+ 		return $link; // return created link to base program
+ 	}// getLink
  }// class end
