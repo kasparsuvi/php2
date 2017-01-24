@@ -10,6 +10,7 @@
 define('CLASSES_DIR', 'classes/');
 define('TMPL_DIR', 'tmpl/');
 define('STYLE_DIR', 'css/');
+define('ACTS_DIR', 'acts/');
 require_once CLASSES_DIR.'template.php';
 // and use it
 // create an template object,
@@ -73,12 +74,14 @@ echo $link.'<br />';
 // import menu file
 require_once 'menu.php';
 echo $link.'<br />';
-// control http output
-echo '<pre>';
-print_r($http);
-echo '</pre>';
-echo '<hr />';
-// control element value by name
-echo $http->get('act');
+//echo '<pre>';
+//print_r($http);
+//echo '</pre>';
+//// control element value by name
+//echo $http->get('act');
+//
+// control actions
+// import act file
+require_once 'act.php';
 
 ?>
