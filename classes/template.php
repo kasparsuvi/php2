@@ -60,4 +60,6 @@ class template{
 	function set($name, $val){
     		$this->vars[$name] = $val;
     }// set
+
+
 }// class end
