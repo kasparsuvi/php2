@@ -5,5 +5,7 @@
  * Date: 1/24/2017
  * Time: 9:23 PM
  */
-$act =
+// get act element value from url
+$act = $http->get('act');
+echo 'act value = '.$act.'<br />';
 ?>

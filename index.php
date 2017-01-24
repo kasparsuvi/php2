@@ -78,6 +78,7 @@ echo '<pre>';
 print_r($http);
 echo '</pre>';
 echo '<hr />';
+// control element value by name
 echo $http->get('act');
 
 ?>
