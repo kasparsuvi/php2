@@ -12,7 +12,7 @@ $menu = new template('menu.menu'); // in menu directory is file menu.html menu/m
 $item = new template('menu.item');
 // add pairs of item temlate element names and real values
 $item->set('name', 'Esimene leht');
-$link = $http->getLink('page'=>'first');
+$link = $http->getLink(array('page'=>'first'));
 $item->set('link', $link);
 // control created item output
 echo '<pre>';
