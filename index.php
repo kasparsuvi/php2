@@ -17,7 +17,7 @@ require_once CLASSES_DIR.'template.php';
 // load template file content
 $tmpl = new template('main');
 // add pairs of temlate element names and real values
-$tmpl->set('style', STYLE_DIR.'main.css');
+$tmpl->set('style', STYLE_DIR.'main'.'.css');
 
 $tmpl->set('header', 'minu lehe pealkiri');
 $tmpl->set('menu', 'minu menüü');
