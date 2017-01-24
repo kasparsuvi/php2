@@ -22,5 +22,4 @@ print_r($sentence);
 echo '</pre>';
 // show object output
 $sentence->show();
-
 ?>
