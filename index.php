@@ -73,5 +73,9 @@ echo $link.'<br />';
 // import menu file
 require_once 'menu.php';
 echo $link.'<br />';
+// control http output
+echo '<pre>';
+print_r($http);
+echo '</pre>';
 
 ?>
