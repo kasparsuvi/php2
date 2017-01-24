@@ -6,6 +6,10 @@
  * Date: 1/24/2017
  * Time: 2:54 PM
  */
+// useful function
+function fixHtml($val){
+    	return htmlentities($val);
+}// fixHtml
 class http
 {// http begin
     // class variables
@@ -39,6 +43,10 @@ class http
 	function set($name, $val){
     		$this->vars[$name] = $val;
     }// set
+    // get element_value according to the element_name
+	function get($name){
+
+    }// get
 }// http end
 
 ?>
