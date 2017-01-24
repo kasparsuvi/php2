@@ -22,4 +22,14 @@ print_r($sentence);
 echo '</pre>';
 // show object output
 $sentence->show();
+
+echo '<hr/>';
+// create an object with constructor
+ $sentence2 = new text('Hello text by construct!');
+ // control object output
+ echo '<pre>';
+ print_r($sentence2);
+ echo '</pre>';
+ // show object output
+ $sentence2->show();
 ?>
