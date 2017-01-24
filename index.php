@@ -39,4 +39,10 @@ $http = new http();
 echo '<pre>';
 print_r($http);
 echo '</pre>';
+// control http constants
+echo REMOTE_ADDR.'<br />';
+echo PHP_SELF.'<br />';
+echo SCRIPT_NAME.'<br />';
+echo HTTP_HOST.'<br />';
+
 ?>
