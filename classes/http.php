@@ -34,6 +34,11 @@ class http
             }
         }
     }// initConst
+
+	// set up data for http object - pairs element_name => element value
+	function set($name, $val){
+    		$this->vars[$name] = $val;
+    }// set
 }// http end
 
 ?>
