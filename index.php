@@ -27,9 +27,9 @@ require_once CLASSES_DIR.'http.php';
 require_once CLASSES_DIR.'linkobject.php';
 // create and output http object from linkobject class
 $http = new linkobject();
-// control menu
+// create and output menu
 // import menu file
-require_once 'menu.php';
+require_once 'menu.php'; // in this file is menu creation
 $tmpl->set('menu', $menu->parse());
 $tmpl->set('nav_bar', 'minu navigatsioon');
 $tmpl->set('lang_bar', 'minu keeleriba');
