@@ -36,6 +36,5 @@ class linkobject extends http{// class begin
         }
         // create pair: element_name=element_value
         $link = $link.fixUrl($name).$this->eq.fixUrl($val);
-        echo $link.'<br />';
  	}// addTo Link
  }// class end
