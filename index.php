@@ -18,7 +18,7 @@ $tmpl->set('header', 'minu lehe pealkiri');
 
 // create and output menu
 // import menu file
-require_once 'menu.php'; // in this file is menu creation
+include 'menu.php'; // in this file is menu creation
 $tmpl->set('menu', $menu->parse());
 
 $tmpl->set('nav_bar', 'minu navigatsioon');
