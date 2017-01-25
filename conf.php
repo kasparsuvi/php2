@@ -17,10 +17,10 @@ require_once CLASSES_DIR.'template.php'; // import template class
 require_once CLASSES_DIR.'http.php'; // import http class
 require_once CLASSES_DIR.'linkobject.php'; // import linkobject class
 require_once CLASSES_DIR.'mysql.php'; // import database class
-
+require_once 'db_conf.php'; // import database configuration
 
 // create and output http object from linkobject class
 $http = new linkobject();
 // create database object
-$db = new mysql('localhost', 'kasparsuvi', 'iech6xah', 'kasparsuvi_arst');
+$db = new mysql(DBHOST,DBUSER,DBPASS,DBNAME);
 ?>
