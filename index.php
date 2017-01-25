@@ -35,13 +35,16 @@ require_once 'act.php';
 // create test query
 $sql = 'SELECT NOW();';
 $res = $db->getArray($sql);
+$sql = 'SELECT NOW();';
+$res = $db->getArray($sql);
+$sql = 'SELECT NOW();';
+$res = $db->getArray($sql);
+
 // control database query result
 echo '<pre>';
 print_r($res);
 echo '</pre>';
 
 // query time control
-echo '<pre>';
-print_r($db->history);
-echo '</pre>';
+$db->showHistory();
 ?>
