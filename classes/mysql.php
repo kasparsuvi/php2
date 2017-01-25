@@ -33,7 +33,7 @@ class mysql
     }// connect
     // query to database
     function query($sql){
-        $res = mysqli_query($this->conn, $sql);
+        $res = mysqli_query($this->conn, $sql); // query result
         if($res === FALSE){
             echo 'Viga päringus <b>'.$sql.'</b><br />';
             echo mysqli_error().'<br />';
