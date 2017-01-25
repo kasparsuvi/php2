@@ -6,6 +6,8 @@
  * Date: 12.01.2017
  * Time: 12:58
  */
+// import configuration
+require_once 'conf.php';
 // create an template object,
 // set up the file name for template
 // load template file content
