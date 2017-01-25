@@ -14,6 +14,7 @@ class mysql
     var $user = false; // database server user
     var $pass = false; // database server user password
     var $dbname = false; // database server user database
+    var $history = array(); // database query log array
     // class methods
     // construct
     function __construct($h, $u, $p, $dn){
@@ -31,6 +32,13 @@ class mysql
             exit;
         }
     }// connect
+
+    //control query time
+	function getMicrotime(){
+    		list($usec, $sec) = explode(" ", microtime());
+    		return ((float)$usec + (float)$sec);
+ 	}// getMicrotime
+
     // query to database
     function query($sql){
         $res = mysqli_query($this->conn, $sql); // query result
