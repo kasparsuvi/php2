@@ -37,7 +37,7 @@ $menu->add('items', $item->parse()); // add another item to menu
 
 
 //main menu content query
-$sql = 'SELECT content_id, title FROM content WHERE parent_id="0" AND show_in_menu="1" ORDER BY sort ASC';
+$sql = 'SELECT content_id, title FROM content WHERE parent_id="0" AND show_in_menu="1" ORDER BY sort ASC;';
 
 //get menu data from database
 $res = $db->getArray($sql);
