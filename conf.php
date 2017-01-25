@@ -22,5 +22,5 @@ require_once CLASSES_DIR.'mysql.php'; // import database class
 // create and output http object from linkobject class
 $http = new linkobject();
 // create database object
-$db = new mysql('localhost', 'kasparsuvi', '79nF49QZ', 'kasparsuvi_arst');
+$db = new mysql('localhost', 'kasparsuvi', 'iech6xah', 'kasparsuvi_arst');
 ?>
