@@ -36,7 +36,7 @@ class mysql
         $res = mysqli_query($this->conn, $sql); // query result
         if($res === FALSE){
             echo 'Viga päringus <b>'.$sql.'</b><br />';
-            echo mysqli_error().'<br />';
+            echo mysqli_error($this->conn).'<br />';
             exit;
         }
         return $res;
