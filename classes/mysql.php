@@ -41,6 +41,19 @@ class mysql
         }
         return $res;
     }// query
+
+    // query with data result
+	function getArray($sql){
+    		$res = $this->query($sql);
+    		$data = array();
+    		while($record = mysqli_fetch_assoc($res)){
+        			$data[] = $record;
+        		}
+ 		if(count($data) == 0){
+        			return false;
+ 		}
+ 		return $data;
+ 	}// getArray
 }// class end
 ?>
 
