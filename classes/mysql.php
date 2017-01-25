@@ -41,12 +41,18 @@ class mysql
 
     // query to database
     function query($sql){
+        $begin = $this->getMicrotime();
         $res = mysqli_query($this->conn, $sql); // query result
         if($res === FALSE){
             echo 'Viga päringus <b>'.$sql.'</b><br />';
             echo mysqli_error($this->conn).'<br />';
             exit;
         }
+        $time = $this->getMicrotime() - $begin;
+        		$this->history[] = array(
+                    'sql' => $sql,
+                    'time' => $time
+                );
         return $res;
     }// query
 
