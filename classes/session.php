@@ -21,6 +21,7 @@ class session{ //session start
         $this->http = &$http;
         $this->db = &$db;
         $this->sid = $http->get('sid');
+        $this->createSession();
 
     }//construct
 
