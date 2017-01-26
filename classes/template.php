@@ -2,16 +2,16 @@
 /**
  * Created by PhpStorm.
  * User: Kaspar
- * Date: 1/24/2017
- * Time: 1:58 PM
+ * Date: 12.01.2017
+ * Time: 12:27
  */
 // if TMPL_DIR is not defined
 if(!defined('TMPL_DIR')){
-    	// define this constant and use in class template
-    	define('TMPL_DIR', '../tmpl/');
+    // define this constant and use in class template
+    define('TMPL_DIR', '../tmpl/');
 }
-
-class template{
+class template
+{
     // class variables
     var $file = ''; // template file name
     var $content = false; // template content - now is empty
@@ -22,7 +22,6 @@ class template{
         $this->file = $f;
         $this->loadFile();
     }// construct
-
     function loadFile(){
         $f = $this->file; // use file name variable
         // if some problem with tmpl directory
@@ -57,36 +56,32 @@ class template{
             exit;
         }
     }// loadFile
-
     function readFile($f){
         $this->content = file_get_contents($f);
     }// readFile
-
-	// set up html template elements and their real values
-	// $name - template element name
-	// $val - real value for template element
-	function set($name, $val){
-    		$this->vars[$name] = $val;
+    // set up html template elements and their real values
+    // $name - template element name
+    // $val - real value for template element
+    function set($name, $val){
+        $this->vars[$name] = $val;
     }// set
-
-	// add to html template another real values
-	function add($name, $val){
-    		if(!isset($this->vars[$name])){
-        			$this->set($name, $val);
-        		} else {
-        			// $this->vars[$name] = $this->vars[$name].$val;
-        			$this->vars[$name] .= $val;
-        		}
- 	}// add
+    // add to html template another real values
+    function add($name, $val){
+        if(!isset($this->vars[$name])){
+            $this->set($name, $val);
+        } else {
+            // $this->vars[$name] = $this->vars[$name].$val;
+            $this->vars[$name] .= $val;
+        }
+    }// add
     // parse template content and replace template table names by
-	// template table real values
-	function parse(){
-    		$str = $this->content;
-    		foreach ($this->vars as $name=>$val){
-        			$str = str_replace('{'.$name.'}', $val, $str);
-        		}
- 		// return template content with real values
- 		return $str;
- 	}// parse
-
+    // template table real values
+    function parse(){
+        $str = $this->content;
+        foreach ($this->vars as $name=>$val){
+            $str = str_replace('{'.$name.'}', $val, $str);
+        }
+        // return template content with real values
+        return $str;
+    }// parse
 }// class end

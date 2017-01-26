@@ -1,14 +1,13 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: Kaspar
- * Date: 1/24/2017
- * Time: 2:54 PM
+ * Date: 17.01.2017
+ * Time: 12:48
  */
 // useful function
 function fixHtml($val){
-    	return htmlentities($val);
+    return htmlentities($val);
 }// fixHtml
 class http
 {// http begin
@@ -38,23 +37,20 @@ class http
             }
         }
     }// initConst
-
-	// set up data for http object - pairs element_name => element value
-	function set($name, $val){
-    		$this->vars[$name] = $val;
+    // set up data for http object - pairs element_name => element value
+    function set($name, $val){
+        $this->vars[$name] = $val;
     }// set
     // get element_value according to the element_name
-	function get($name){
+    function get($name, $fix = true){
         // if element with such name is exists
         if(isset($this->vars[$name])){
             if($fix){
                 return fixHtml($this->vars[$name]);
- 			}
- 		    return $this->vars[$name];
- 		}
- 		// if element with such name is not exists
- 		return false;
+            }
+            return $this->vars[$name];
+        }
+        // if element with such name is not exists
+        return false;
     }// get
 }// http end
-
-?>

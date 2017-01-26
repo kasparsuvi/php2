@@ -7,7 +7,7 @@
  */
 
 echo 'default fail sisu<br />';
-
+/*
 $page_id = $http->get('page_id'); //get page_id from url
 //get page content from database according to page_id
 $sql = 'SELECT * FROM content WHERE content_id="'.$page_id.'";';
@@ -21,5 +21,5 @@ if($res !== FALSE){
     print_r($res);
     echo '</pre>';
 }
-
+*/
 ?>

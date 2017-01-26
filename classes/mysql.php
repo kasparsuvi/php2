@@ -1,10 +1,9 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: Kaspar
- * Date: 1/25/2017
- * Time: 6:19 PM
+ * Date: 19.01.2017
+ * Time: 12:31
  */
 class mysql
 {// class begin
@@ -32,13 +31,11 @@ class mysql
             exit;
         }
     }// connect
-
     //control query time
-	function getMicrotime(){
-    		list($usec, $sec) = explode(" ", microtime());
-    		return ((float)$usec + (float)$sec);
- 	}// getMicrotime
-
+    function getMicrotime(){
+        list($usec, $sec) = explode(" ", microtime());
+        return ((float)$usec + (float)$sec);
+    }// getMicrotime
     // query to database
     function query($sql){
         $begin = $this->getMicrotime();
@@ -49,35 +46,33 @@ class mysql
             exit;
         }
         $time = $this->getMicrotime() - $begin;
-        		$this->history[] = array(
-                    'sql' => $sql,
-                    'time' => $time
-                );
+        $this->history[] = array(
+            'sql' => $sql,
+            'time' => $time
+        );
         return $res;
     }// query
-
     // query with data result
-	function getArray($sql){
-    		$res = $this->query($sql);
-    		$data = array();
-    		while($record = mysqli_fetch_assoc($res)){
-        			$data[] = $record;
-        		}
- 		if(count($data) == 0){
-        			return false;
- 		}
- 		return $data;
- 	}// getArray
-
+    function getArray($sql){
+        $res = $this->query($sql);
+        $data = array();
+        while($record = mysqli_fetch_assoc($res)){
+            $data[] = $record;
+        }
+        if(count($data) == 0){
+            return false;
+        }
+        return $data;
+    }// getArray
+    // output query history log array
     function showHistory(){
-        		if(count($this->history) > 0){
-            			echo '<hr />';
- 			foreach ($this->history as $key=>$val){
-                				echo '<li>'.$val['sql'].'<br />';
- 				echo '<strong>'.round($val['time'], 6).'</strong><br /></li>';
- 			}
- 		}
+        if(count($this->history) > 0){
+            echo '<hr />';
+            foreach ($this->history as $key=>$val){
+                echo '<li>'.$val['sql'].'<br />';
+                echo '<strong>'.round($val['time'], 6).'</strong><br /></li>';
+            }
+        }
     }// showHistory
 }// class end
 ?>
-

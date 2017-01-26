@@ -2,14 +2,11 @@
 /**
  * Created by PhpStorm.
  * User: Kaspar
- * Date: 1/26/2017
- * Time: 2:52 PM
+ * Date: 26.01.2017
+ * Time: 14:51
  */
-
-//useful function for sql and queris
-
-function fixDB($val){
+// useful function for sql queries
+function fixDb($val){
     return '"'.addslashes($val).'"';
 }
-
 ?>
