@@ -12,7 +12,15 @@ define('TMPL_DIR', 'tmpl/'); // templates path
 define('STYLE_DIR', 'css/'); // styles path
 define('ACTS_DIR', 'acts/'); // acts path
 define('LIB_DIR', 'lib/'); // lib path
+
 define('DEFAULT_ACT', 'default'); // default act file name
+
+// user roles
+define('ROLE_NONE', 0);
+define('ROLE_ADMIN', 1);
+define('ROLE_USER', 2);
+
+
 // import useful functions
 require_once LIB_DIR.'utils.php';
 require_once CLASSES_DIR.'template.php'; // import template class
