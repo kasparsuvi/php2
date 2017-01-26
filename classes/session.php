@@ -22,6 +22,17 @@ class session
         $this->sid = $http->get('sid');
         $this->checkSession();
     }// construct
+
+    // set anonymous
+    function setAnonymous($bool){
+        $this->anonymous = $bool;
+    }// set anonymous
+
+    // setup timeout
+    function setTimeout($t){
+        $this->timeout = $t;
+    }// timeout
+
     // create session
     function createSession($user = false){
         // anonymous session
@@ -97,7 +108,7 @@ class session
     //delete session by request
     function deleteSession(){
         if($this->sid !== false){
-            sql = ' DELETE FROM session WHERE '.
+            $sql = ' DELETE FROM session WHERE '.
                 'sid='.fixDb($this->sid);
             $this->db->query($sql);
             $this->sid = false;
@@ -105,6 +116,34 @@ class session
         }
     }//deleteSession
 
+    function set($name, $val){
+        $this->vars[$name] = $val;
+    }// set
+    // get element_value according to the element_name
+    function get($name, $fix = true){
+        // if element with such name is exists
+        if(isset($this->vars[$name])){
+            return $this->vars[$name];
+        }
+        // if element with such name is not exists
+        return false;
+    }// get
+
+    //delete http data elemnt
+    function del($name){
+        if (isset($this->vars[$name])){
+            unset($this->vars[$name]);
+        }
+    }//del
+
+    function flush(){
+        if($this->sid !== false){
+            $sql = 'UPDATE session SET changed=NOW(),'.
+                'svars='.fixDb(serialize($this->vars)).
+                ' WHERE sid='.fixDb($this->sid);
+            $this->db->query($sql);
+        }
+    }
 
 }// class end
 ?>
