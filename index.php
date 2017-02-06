@@ -18,10 +18,9 @@ $tmpl->set('header', 'minu lehe pealkiri');
 // import menu file
 require_once 'menu.php'; // in this file is menu creation
 $tmpl->set('menu', $menu->parse());
-$tmpl->set('nav_bar', 'minu navigatsioon');
-$tmpl->set('lang_bar', 'minu keeleriba');
+$tmpl->set('nav_bar', $sess->user_data['username']);
+$tmpl->set('lang_bar', LANG_ID);
 $tmpl->set('content', $form->parse());
-$tmpl->set('nav_bar',$sess ->user_data['username']);
 // output template content set up with real values
 echo $tmpl->parse();
 // control actions

@@ -43,6 +43,21 @@ $sess = new session($http, $db);
 $tmpl = new template('main');
 
 //language support
+//sites used language
+$siteLangs = array(
+    'et' => 'estonian',
+    'en' => 'english',
+    'ru' => 'russian'
+);
+//get land_id from URL
+$lang_id = $http->get('lang_id');
+if (!isset($siteLangs[$lang_id])){
+    // if such lang id is not supported
+    $lang_id = DEFAULT_LANG; // use default lang- estonian
+    $http->set('lang_id',$lang_id); //fix used lang_id
+}
+define('LANG_ID', $lang_id); //define useful constant which describe right now active lang
+
 $lang_id = DEFAULT_LANG;
 $http->set('lang_id',$lang_id);
 
