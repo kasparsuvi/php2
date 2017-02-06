@@ -8,8 +8,8 @@
 
 
 $_trans = array(
-    'Esimene leht' => 'First',
-    'Teine leht' => 'Second',
+    'Esimene' => 'First',
+    'Teine' => 'Second',
     'kolmas' => 'Third',
     'minu lehe pealkiri' => 'My page heading',
     'logi välja' => 'Logout',
