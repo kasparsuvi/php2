@@ -42,5 +42,9 @@ $db = new mysql(DBHOST,DBUSER,DBPASS,DBNAME);
 $sess = new session($http, $db);
 $tmpl = new template('main');
 
+//language support
+$lang_id = DEFAULT_LANG;
+$http->set('lang_id',$lang_id);
+
 require_once ACTS_DIR.'login.php'; // import login act
 ?>
