@@ -29,10 +29,14 @@ require_once CLASSES_DIR.'linkobject.php'; // import linkobject class
 require_once CLASSES_DIR.'mysql.php'; // import database class
 require_once CLASSES_DIR.'session.php'; // import session class
 require_once 'db_conf.php'; // import database configuration
+
 // create and output http object from linkobject class
 $http = new linkobject();
 // create database object
 $db = new mysql(DBHOST,DBUSER,DBPASS,DBNAME);
 // create session object
 $sess = new session($http, $db);
+$tmpl = new template('main');
+require_once ACTS_DIR.'login.php'; // import login act
+
 ?>

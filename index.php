@@ -11,7 +11,7 @@ require_once 'conf.php';
 // create an template object,
 // set up the file name for template
 // load template file content
-$tmpl = new template('main');
+
 // add pairs of temlate element names and real values
 $tmpl->set('style', STYLE_DIR.'main'.'.css');
 $tmpl->set('header', 'minu lehe pealkiri');
@@ -21,7 +21,7 @@ require_once 'menu.php'; // in this file is menu creation
 $tmpl->set('menu', $menu->parse());
 $tmpl->set('nav_bar', 'minu navigatsioon');
 $tmpl->set('lang_bar', 'minu keeleriba');
-$tmpl->set('content', 'minu sisu');
+$tmpl->set('content', $form->parse());
 $tmpl->set('nav_bar',$sess ->user_data['username']);
 // output template content set up with real values
 echo $tmpl->parse();
@@ -43,5 +43,6 @@ echo '<pre>';
 print_r($sess);
 echo '</pre>';
 $sess->clearSession();
+
 ?>
 

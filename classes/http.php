@@ -61,7 +61,7 @@ class http
         }
     }
 
-    function redirect($url= false){
+    function redirect($url = false){
         global $sess;
         $sess->flush();
 
