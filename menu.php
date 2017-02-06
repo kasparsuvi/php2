@@ -46,6 +46,13 @@ $item->set('link', $link);
 $menu->add('items', $item->parse()); // add another item to menu
 
 if(USER_ID != ROLE_NONE){
+
+    $item->set('name', tr('administreeri'));
+    $link = $http->getLink(array('act' => 'admin'));
+    $item->set('link', $link);
+    $menu->add('items', $item->parse()); // add another item to menu
+
+
     $item->set('name', tr('logi välja'));
     $link = $http->getLink(array('act' => 'logout'));
     $item->set('link', $link);

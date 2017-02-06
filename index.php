@@ -26,8 +26,6 @@ require_once 'act.php';
 
 $tmpl->set('nav_bar', $sess->user_data['username']);
 
-//$tmpl->set('lang_bar', LANG_ID);
-$tmpl->set('content', $form->parse());
 // output template content set up with real values
 echo $tmpl->parse();
 // control actions
