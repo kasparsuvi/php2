@@ -30,19 +30,14 @@ echo $tmpl->parse();
 require_once 'act.php';
 // control database object
 // create test query
-$sql = 'SELECT NOW();';
-$res = $db->getArray($sql);
-$sql = 'SELECT NOW();';
-$res = $db->getArray($sql);
-$sql = 'SELECT NOW();';
-$res = $db->getArray($sql);
+$sess ->flush();
+
 // control database query result
 echo '<pre>';
 print_r($res);
 echo '</pre>';
 // query time control
 $db->showHistory();
-$sess ->flush();
 // control session output
 echo '<pre>';
 print_r($sess);
