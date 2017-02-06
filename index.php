@@ -11,7 +11,6 @@ require_once 'conf.php';
 // create an template object,
 // set up the file name for template
 // load template file content
-
 // add pairs of temlate element names and real values
 $tmpl->set('style', STYLE_DIR.'main'.'.css');
 $tmpl->set('header', 'minu lehe pealkiri');
@@ -31,7 +30,6 @@ require_once 'act.php';
 // control database object
 // create test query
 $sess ->flush();
-
 // control database query result
 echo '<pre>';
 print_r($res);
@@ -43,6 +41,4 @@ echo '<pre>';
 print_r($sess);
 echo '</pre>';
 $sess->clearSession();
-
 ?>
-

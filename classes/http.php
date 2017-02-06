@@ -53,18 +53,15 @@ class http
         // if element with such name is not exists
         return false;
     }// get
-
     //delete http data elemnt
     function del($name){
         if (isset($this->vars[$name])){
             unset($this->vars[$name]);
         }
     }
-
     function redirect($url = false){
         global $sess;
         $sess->flush();
-
         if($url == false){
             $url = $this->getLink();
         }
@@ -72,4 +69,4 @@ class http
         header('Location: '.$url);
         exit;
     }
-}// http end
+}//f http end

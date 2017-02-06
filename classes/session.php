@@ -22,17 +22,14 @@ class session
         $this->sid = $http->get('sid');
         $this->checkSession();
     }// construct
-
     // set anonymous
     function setAnonymous($bool){
         $this->anonymous = $bool;
     }// set anonymous
-
     // setup timeout
     function setTimeout($t){
         $this->timeout = $t;
     }// timeout
-
     // create session
     function createSession($user = false){
         // anonymous session
@@ -57,7 +54,6 @@ class session
         $this->sid = $sid;
         $this->http->set('sid', $sid);
     }// createSession
-
     // delete session data from database
     function clearSession(){
         $sql = 'DELETE FROM session '.
@@ -66,45 +62,43 @@ class session
             $this->timeout;
         $this->db->query($sql);
     }
-
     // control session
     function checkSession(){
         $this->clearSession();
-         if ($this->sid === false and $this->anonymous){
-             $this->createSession();
-         }
-         if ($this->sid !== false){
-             // get data about this session
-             $sql = 'SELECT * FROM session WHERE '.
-                 'sid='.fixDb($this->sid);
-             $res = $this ->db->getArray($sql);
-             if ($res == false){
-                 if ($this->anonymous ) {
-                     $this->createSession();
-                 }else{
-                     $this->sid = false;
-                     $this->http->del('sid');
-                 }
-                 define('ROLE_ID', 0);
-                 define('USER_ID', 0);
-             }
-             else{
-                 $vars = unserialize($res[0]['svars']);
-                 if (!is_array($vars)){
-                     $vars = array();
-                 }
-                 $this->vars = $vars;
-                 $user_data = unserialize($res[0]['user_data']);
-                 define('ROLL_ID',$user_data['role_id']);
-                 define('USER_ID',$user_data['user_id']);
-                 $this->user_data = $user_data;
-             }
-         } else {
+        if ($this->sid === false and $this->anonymous){
+            $this->createSession();
+        }
+        if ($this->sid !== false){
+            // get data about this session
+            $sql = 'SELECT * FROM session WHERE '.
+                'sid='.fixDb($this->sid);
+            $res = $this ->db->getArray($sql);
+            if ($res == false){
+                if ($this->anonymous ) {
+                    $this->createSession();
+                }else{
+                    $this->sid = false;
+                    $this->http->del('sid');
+                }
+                define('ROLE_ID', 0);
+                define('USER_ID', 0);
+            }
+            else{
+                $vars = unserialize($res[0]['svars']);
+                if (!is_array($vars)){
+                    $vars = array();
+                }
+                $this->vars = $vars;
+                $user_data = unserialize($res[0]['user_data']);
+                define('ROLE_ID',$user_data['role_id']);
+                define('USER_ID',$user_data['user_id']);
+                $this->user_data = $user_data;
+            }
+        } else {
             define('ROLE_ID',0);
             define('USER_ID',0);
-         }
+        }
     }//check session
-
     //delete session by request
     function deleteSession(){
         if($this->sid !== false){
@@ -115,7 +109,6 @@ class session
             $this->http->del('sid');
         }
     }//deleteSession
-
     function set($name, $val){
         $this->vars[$name] = $val;
     }// set
@@ -128,14 +121,12 @@ class session
         // if element with such name is not exists
         return false;
     }// get
-
     //delete http data elemnt
     function del($name){
         if (isset($this->vars[$name])){
             unset($this->vars[$name]);
         }
     }//del
-
     function flush(){
         if($this->sid !== false){
             $sql = 'UPDATE session SET changed=NOW(),'.
@@ -144,6 +135,5 @@ class session
             $this->db->query($sql);
         }
     }
-
 }// class end
 ?>
