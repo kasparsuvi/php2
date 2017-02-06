@@ -27,7 +27,7 @@ if($res != false ){
         //add content to menu item
         $link = $http->getLink(array('page_id'=>$page['content_id']));
         $item->set('link',$link);
-        $item->set('name', $page['title']);
+        $item->set('name', tr($page['title']));
         $menu->add('items',$item->parse());
     }
 }
@@ -35,18 +35,18 @@ if($res != false ){
 $tmpl->set('menu',$menu->parse());
 
 // add pairs of item temlate element names and real values
-$item->set('name', 'Esimene leht');
+$item->set('name', tr('Esimene leht'));
 $link = $http->getLink(array('act'=>'first'));
 $item->set('link', $link);
 $menu->set('items', $item->parse());
 
-$item->set('name', 'Teine leht');
+$item->set('name', tr('Teine leht'));
 $link = $http->getLink(array('act'=>'second'));
 $item->set('link', $link);
 $menu->add('items', $item->parse()); // add another item to menu
 
 if(USER_ID != ROLE_NONE){
-    $item->set('name', 'logi välja');
+    $item->set('name', tr('logi välja'));
     $link = $http->getLink(array('act' => 'logout'));
     $item->set('link', $link);
     $menu->add('items', $item->parse()); // add another item to menu

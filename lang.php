@@ -24,4 +24,5 @@ foreach($siteLangs as $lang_id => $lang_name) {
     if($count < count($siteLangs)) {
         $tmpl->add('lang_bar', $sep);
     }
+
 }

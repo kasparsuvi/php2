@@ -14,7 +14,7 @@ require_once ('lang.php');
 
 // add pairs of template element names and real values
 $tmpl->set('style', STYLE_DIR.'main'.'.css');
-$tmpl->set('header', 'minu lehe pealkiri');
+$tmpl->set('header', tr('minu lehe pealkiri'));
 
 // create and output menu
 // import menu file

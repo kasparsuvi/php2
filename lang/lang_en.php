@@ -8,14 +8,14 @@
 
 
 $_trans = array(
-    'esimene' => 'First',
-    'teine' => 'Second',
+    'Esimene leht' => 'First',
+    'Teine leht' => 'Second',
     'kolmas' => 'Third',
     'minu lehe pealkiri' => 'My page heading',
     'logi välja' => 'Logout',
-    'kasutajanimi' => 'Username',
-    'karool' => 'Password',
-    'logi sisse' => 'Login',
+    'Kasutajanimi' => 'Username',
+    'parool' => 'Password',
+    'Logi sisse' => 'Login',
     'viga sisselogimisel' => 'Login error'
 );
 ?>

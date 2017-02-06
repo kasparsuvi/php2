@@ -58,6 +58,8 @@ if (!isset($siteLangs[$lang_id])){
     $http->set('lang_id',$lang_id); //fix used lang_id
 }
 define('LANG_ID', $lang_id); //define useful constant which describe right now active lang
+require_once LIB_DIR.'trans.php';
+
 
 $lang_id = DEFAULT_LANG;
 $http->set('lang_id',$lang_id);
