@@ -17,6 +17,7 @@ $_trans = array(
     'parool' => 'Password',
     'Logi sisse' => 'Login',
     'viga sisselogimisel' => 'Login error',
-    'administreeri' => 'Do admin stuff'
+    'administreeri' => 'Do admin stuff',
+    'Uus kasutaja' => 'New user'
 );
 ?>

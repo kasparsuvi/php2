@@ -28,5 +28,9 @@ if($res != false ){
         $users->add('users',$user->parse());
     }
 }
+$link = $http->getLink(array('act' => 'add_user'));
+$users->set('action', $link);
+
+$users->set('button',tr("Uus kasutaja"));
 $tmpl ->set('content',$users->parse());
 ?>
