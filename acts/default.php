@@ -13,6 +13,8 @@ $res = $db->getArray($sql);
     $http->set('page_id', $page['content_id']);
     if ($page_id == 1) {
         $tmpl->set('content',$form->parse());
+    }elseif ($page_id == NULL){
+        $tmpl->set('content', "see on esileht");
     } else {
         $tmpl->set('content', $page['content']);
     }
